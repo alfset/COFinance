@@ -5,7 +5,7 @@ import CurrencyFormat from '../components/CurrencyFormat';
 import CustomDropdown from '../components/Dropdown/CustomDropdown';
 import { Link } from 'react-router-dom';
 
-function PresalePage() {
+function Page() {
   const [amount, setAmount] = useState('');
 
   return (
@@ -167,4 +167,4 @@ function PresalePage() {
   );
 }
 
-export default PresalePage;
+export default Page;
