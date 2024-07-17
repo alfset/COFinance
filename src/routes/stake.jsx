@@ -8,7 +8,7 @@ import Modal from '../components/Modal';
 import ListItem from '../components/ListItem';
 import tokenList from '../constant/tokenList';
 
-const Stake = () => {
+const Page = () => {
   const [token, setToken] = useState('');
   const [amount, setAmount] = useState('');
   const [daysBorrowed, setDaysBorrowed] = useState('');
@@ -140,4 +140,4 @@ const Stake = () => {
   );
 };
 
-export default Stake;
+export default Page;
