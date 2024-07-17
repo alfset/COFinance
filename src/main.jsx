@@ -6,7 +6,7 @@ import Root from './routes/root';
 import Home from './routes/home';
 import Swap from './routes/swap';
 import Presale from './routes/presale.jsx'
-import Incentived from './routes/incentiv.jsx'
+//import Incentived from './routes/incentiv.jsx'
 import Lending from './routes/lending';
 import Boostrap from './routes/boostraping.jsx';
 import Stake from './routes/stake.jsx'
@@ -39,10 +39,6 @@ const router = createBrowserRouter([
       {
         path: 'liquidity',
         element: <Liquidity />,
-      },
-      {
-        path: 'incentiv',
-        element: <Incentived />,
       },
       {
         path: 'lending',
