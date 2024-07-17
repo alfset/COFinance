@@ -6,19 +6,19 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   const ecosystem = [
     {
-      url: 'https://CoFinance/#/swap',
+      url: '/swap',
       name: 'Trade',
     },
     {
-      url: 'https://cofinance/#/lend',
+      url: '/lending',
       name: 'Lending Borrowing',
     },
     {
-      url: 'https://CoFinance/#/pools',
+      url: '/liquidity',
       name: 'Pools',
     },
     {
-      url: 'https://cofinance/#/stake',
+      url: '/stake',
       name: 'Staking',
     },
     {
@@ -114,7 +114,7 @@ const Footer = () => {
               <div className="flex flex-col">
                 <div>
                   <img src="./logo.png" width={50} height={50} alt="" />
-                  <p className="text-xl font-semibold">Physica Finance</p>
+                  <p className="text-xl font-semibold">CoFinance</p>
                 </div>
                 <p className="py-2 text-sm font-medium text-blue-900/90 dark:text-gray-400">
                   Swap, earn, and build on the leading decentralized crypto trading protocol on Cross Finance.
@@ -129,7 +129,7 @@ const Footer = () => {
           <div className="footer">
             <aside className="items-center grid-flow-col">
               <p>
-                Powered by <a href="https://planq.network">Comunity Node</a> <br />
+                Powered by <a href="https://comunitynode.my.id">Comunity Node</a> <br />
                 <span className="text-sm text-blue-900/80 dark:text-gray-400">
                   Copyright ® 2023, CoFinance
                 </span>

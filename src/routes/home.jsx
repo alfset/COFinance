@@ -29,7 +29,7 @@ function Page() {
       component: (
         <Button
           btnType="px-8"
-          url="https://CoFinance/#/swap"
+          url="/swap"
           other="bg-transparent border-2 border-purple-400 hover:border-purple-400 hover:bg-purple-400"
         >
           <Text className="font-semibold title-trade hover:text-neutral">
@@ -51,7 +51,7 @@ function Page() {
       component: (
         <Button
           btnType="px-8"
-          url="https://CoFinance/#/pools"
+          url="/liquidity"
           other="bg-transparent border-2 border-info hover:border-info hover:bg-info"
         >
           <Text className="font-semibold title-earn hover:text-neutral dark:hover:text-primary">
@@ -95,7 +95,7 @@ function Page() {
         <CircleList />
         <div className="min-h-screen bg-white hero dark:bg-primary">
           <div className="flex flex-col items-center justify-between w-screen px-5 pb-20 lg:px-10 hero-content lg:flex-row-reverse">
-            <LottieAnimation srcJson="https://lottie.host/2d4acf10-1896-453f-9439-ed4bdb50b08a/GiXrDSehd5.json" />
+            <LottieAnimation srcJson="https://lottie.host/4a8eca46-4ea1-4235-a4d1-5cf4a78d7747/CHGkPl1IuS.json" />
             <div className="justify-center lg:justify-start">
               <h1 className="text-4xl font-bold lg:text-5xl">
                 <span className="text-blue-900 dark:text-neutral">COFinance</span>{' '}

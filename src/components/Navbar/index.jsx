@@ -24,19 +24,19 @@ const Navbar = () => {
     {
       icon: <FaRocket className="text-blue-950 dark:text-neutral" />,
       children: 'Swap',
-      href: 'https://CoFinance/#/swap',
+      href: '/swap',
       target: '_blank',
     },
     {
       icon: <FaSwimmingPool className="text-blue-950 dark:text-neutral" />,
       children: 'Pool',
-      href: 'https://Cofinance/#/pools',
+      href: '/liquidity',
       target: '_blank',
     },
     {
       icon: <FaWallet className="text-blue-950 dark:text-neutral" />,
       children: 'Staking',
-      href: 'https://www.yieldmos.com/chain/planq',
+      href: '/add',
       target: '_blank',
     },
   ];

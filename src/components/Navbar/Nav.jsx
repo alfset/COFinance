@@ -10,13 +10,13 @@ const Nav = () => {
     {
       icon: <FaSwimmingPool />,
       text: 'Pool',
-      url: '#',
+      url: '/liquidity',
       target: '',
     },
     {
       icon: <FaWallet />,
       text: 'Staking',
-      url: '#',
+      url: '/swap',
       target: '_blank',
     },
   ];
@@ -28,17 +28,17 @@ const Nav = () => {
   return (
     <ul className={`menu menu-horizontal gap-2`}>
       <NavItem
-        url="#"
+        url="/swap"
         textColor="text-neutral"
       >
         Trade
       </NavItem>
       <NavItem
-        url="#"
+        url="/swap"
         target="_blank"
         textColor="text-neutral"
       >
-        Bridge
+        Lending Borrowing
       </NavItem>
       <DropdownMenu children="Earn" width="w-52" items={dropdownItems} />
     </ul>
