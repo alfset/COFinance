@@ -1,4 +1,4 @@
-import '../../index.css'; // Import your CSS file
+import '../../index.css'; 
 
 const CoinAnimation = () => {
   const imageUrls = [

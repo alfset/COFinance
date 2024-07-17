@@ -14,23 +14,23 @@ import Collapse from '../components/Collapse';
 import CustomDropdown from '../components/Dropdown/CustomDropdown';
 import { Link } from 'react-router-dom';
 
-const paySwap = 'pay-swap';
-const recieveSwap = 'recieve-swap';
+const stakePay = 'stake-pay';
+const stakeReceive = 'stake-receive';
 
 function Page() {
-  const [swapPay, setSwapPay] = useState(true);
-  const [swapReceive, setSwapReceive] = useState(true);
+  const [stakePay, setStakePay] = useState(true);
+  const [stakeReceive, setStakeReceive] = useState(true);
 
-  const [selectedPaySwap, setSelectedPaySwap] = useState(null);
-  const [selectedReceiveSwap, setSelectedReceiveSwap] = useState(null);
+  const [selectedStakePay, setSelectedStakePay] = useState(null);
+  const [selectedStakeReceive, setSelectedStakeReceive] = useState(null);
   const [payValue, setPayValue] = useState('');
-  const [recieveValue, setReceiveValue] = useState('');
+  const [receiveValue, setReceiveValue] = useState('');
 
   const handleCoinSelection = (coin, id) => {
-    if (id === paySwap) {
-      setSelectedPaySwap(coin);
-    } else if (id === recieveSwap) {
-      setSelectedReceiveSwap(coin);
+    if (id === stakePay) {
+      setSelectedStakePay(coin);
+    } else if (id === stakeReceive) {
+      setSelectedStakeReceive(coin);
     }
   };
 
@@ -56,7 +56,7 @@ function Page() {
             <div className="flex justify-between items-center">
               <div className="grid grid-cols-2 gap-3 ml-3">
                 <div>
-                  <p className="text-lg font-semibold">Swap</p>
+                  <p className="text-lg font-semibold">Stake</p>
                 </div>
               </div>
               <div>
@@ -178,9 +178,9 @@ function Page() {
             </div>
             <div className="space-y-0">
               <InputGroup
-                label="Your Pay"
+                label="Your Stake"
                 component={
-                  swapPay ? (
+                  stakePay ? (
                     <>
                       <div className="grid grid-cols-3 gap-2">
                         <div className="col-span-2">
@@ -188,29 +188,29 @@ function Page() {
                             type="text"
                             placeholder="0"
                             onKeyUp={payKeyUp}
-                            className="input w-full rouded-lg bg-base-200 px-2"
+                            className="input w-full rounded-lg bg-base-200 px-2"
                           />
                         </div>
                         <div className="flex items-center justify-center">
                           <label
                             className={`flex-col items-start flex-1 btn select select-bordered rounded-full capitalize text-sm ${
-                              selectedPaySwap ? 'px-2' : ''
+                              selectedStakePay ? 'px-2' : ''
                             }`}
                             onClick={() =>
-                              document.getElementById(paySwap).showModal()
+                              document.getElementById(stakePay).showModal()
                             }
                           >
-                            {selectedPaySwap ? (
+                            {selectedStakePay ? (
                               <img
-                                src={selectedPaySwap.imgUrl}
+                                src={selectedStakePay.imgUrl}
                                 className="w-8"
                                 alt=""
                               />
                             ) : (
                               ''
                             )}
-                            {selectedPaySwap
-                              ? selectedPaySwap.subtitle
+                            {selectedStakePay
+                              ? selectedStakePay.subtitle
                               : 'Select token'}
                           </label>
                         </div>
@@ -236,29 +236,29 @@ function Page() {
                             type="text"
                             placeholder="0"
                             onKeyUp={receiveKeyUp}
-                            className="input w-full rouded-lg bg-base-200 px-2"
+                            className="input w-full rounded-lg bg-base-200 px-2"
                           />
                         </div>
                         <div className="flex items-center justify-center">
                           <label
                             className={`flex-col items-start flex-1 btn select select-bordered rounded-full capitalize text-sm ${
-                              selectedReceiveSwap ? 'px-2' : ''
+                              selectedStakeReceive ? 'px-2' : ''
                             }`}
                             onClick={() =>
-                              document.getElementById(recieveSwap).showModal()
+                              document.getElementById(stakeReceive).showModal()
                             }
                           >
-                            {selectedReceiveSwap ? (
+                            {selectedStakeReceive ? (
                               <img
-                                src={selectedReceiveSwap.imgUrl}
+                                src={selectedStakeReceive.imgUrl}
                                 className="w-8"
                                 alt=""
                               />
                             ) : (
                               ''
                             )}
-                            {selectedReceiveSwap
-                              ? selectedReceiveSwap.subtitle
+                            {selectedStakeReceive
+                              ? selectedStakeReceive.subtitle
                               : 'Select token'}
                           </label>
                         </div>
@@ -268,8 +268,8 @@ function Page() {
                           className="label-text text-xs text-gray-500"
                           id=""
                         >
-                          {recieveValue !== '' ? (
-                            <CurrencyFormat amount={recieveValue} />
+                          {receiveValue !== '' ? (
+                            <CurrencyFormat amount={receiveValue} />
                           ) : (
                             ''
                           )}
@@ -285,8 +285,8 @@ function Page() {
                   bgColor="base-200"
                   padding="p-3"
                   onClick={() => {
-                    setSwapPay(!swapPay);
-                    setSwapReceive(!swapReceive);
+                    setStakePay(!stakePay);
+                    setStakeReceive(!stakeReceive);
                   }}
                   iconColor="white"
                   gradient="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br shadow-md shadow-blue-500/50"
@@ -295,7 +295,7 @@ function Page() {
               <InputGroup
                 label="Your Receive"
                 component={
-                  swapReceive ? (
+                  stakeReceive ? (
                     <>
                       <div className="grid grid-cols-3 gap-2">
                         <div className="col-span-2">
@@ -303,29 +303,29 @@ function Page() {
                             type="text"
                             placeholder="0"
                             onKeyUp={receiveKeyUp}
-                            className="input w-full rouded-lg bg-base-200 px-2"
+                            className="input w-full rounded-lg bg-base-200 px-2"
                           />
                         </div>
                         <div className="flex items-center justify-center">
                           <label
                             className={`flex-col items-start flex-1 btn select select-bordered rounded-full capitalize text-sm ${
-                              selectedReceiveSwap ? 'px-2' : ''
+                              selectedStakeReceive ? 'px-2' : ''
                             }`}
                             onClick={() =>
-                              document.getElementById(recieveSwap).showModal()
+                              document.getElementById(stakeReceive).showModal()
                             }
                           >
-                            {selectedReceiveSwap ? (
+                            {selectedStakeReceive ? (
                               <img
-                                src={selectedReceiveSwap.imgUrl}
+                                src={selectedStakeReceive.imgUrl}
                                 className="w-8"
                                 alt=""
                               />
                             ) : (
                               ''
                             )}
-                            {selectedReceiveSwap
-                              ? selectedReceiveSwap.subtitle
+                            {selectedStakeReceive
+                              ? selectedStakeReceive.subtitle
                               : 'Select token'}
                           </label>
                         </div>
@@ -335,8 +335,8 @@ function Page() {
                           className="label-text text-xs text-gray-500"
                           id=""
                         >
-                          {recieveValue !== '' ? (
-                            <CurrencyFormat amount={recieveValue} />
+                          {receiveValue !== '' ? (
+                            <CurrencyFormat amount={receiveValue} />
                           ) : (
                             ''
                           )}
@@ -351,29 +351,29 @@ function Page() {
                             type="text"
                             placeholder="0"
                             onKeyUp={payKeyUp}
-                            className="input w-full rouded-lg bg-base-200 px-2"
+                            className="input w-full rounded-lg bg-base-200 px-2"
                           />
                         </div>
                         <div className="flex items-center justify-center">
                           <label
                             className={`flex-col items-start flex-1 btn select select-bordered rounded-full capitalize text-sm ${
-                              selectedPaySwap ? 'px-2' : ''
+                              selectedStakePay ? 'px-2' : ''
                             }`}
                             onClick={() =>
-                              document.getElementById(paySwap).showModal()
+                              document.getElementById(stakePay).showModal()
                             }
                           >
-                            {selectedPaySwap ? (
+                            {selectedStakePay ? (
                               <img
-                                src={selectedPaySwap.imgUrl}
+                                src={selectedStakePay.imgUrl}
                                 className="w-8"
                                 alt=""
                               />
                             ) : (
                               ''
                             )}
-                            {selectedPaySwap
-                              ? selectedPaySwap.subtitle
+                            {selectedStakePay
+                              ? selectedStakePay.subtitle
                               : 'Select token'}
                           </label>
                         </div>
@@ -503,24 +503,24 @@ function Page() {
         </div>
       </main>
       <Modal
-        id={paySwap}
+        id={stakePay}
         title="Select a token"
         content={
           <ListItem
             items={tokens}
             onItemSelected={handleCoinSelection}
-            id={paySwap}
+            id={stakePay}
           />
         }
       />
       <Modal
-        id={recieveSwap}
+        id={stakeReceive}
         title="Select a token"
         content={
           <ListItem
             items={tokens}
             onItemSelected={handleCoinSelection}
-            id={recieveSwap}
+            id={stakeReceive}
           />
         }
       />
